@@ -1,6 +1,5 @@
 import './App.css';
 import validate from './Validate';
-import TextInput from "./TextInput";
 import React, {Component} from 'react';
 
 const message = {
@@ -57,11 +56,19 @@ class App extends Component {
     }
 
     formSubmitHandler = (e) => {
+        e.preventDefault();
         if (!this.state.formControls.phoneNumber.valid) {
             alert("Please enter a phone number");
             this.setState({result: message.NEED_PHONE});
-            e.preventDefault();
         }
+        fetch('http://localhost:4041/send' , {
+            method: "POST",
+            headers: { "Content-Type": "text/plain" },
+            body: JSON.stringify({
+                phoneNumber: this.state.formControls.phoneNumber.value
+            })
+        }).then((result) => result.json())
+            .then((info) => { console.log(info); })
     }
 
     formatResult() {
