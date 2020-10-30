@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
+const cors = require('cors');
 const port = process.env.PORT || 4041;
 
 const firebase = require('./Firebase');
@@ -9,11 +10,9 @@ firebase.configFireBase();
 const admin = require('firebase-admin');
 admin.initializeApp();
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false}));
-app.use(express.json({
-    type: ['application/json', 'text/plain']
-}));
 
 app.post('/create-new-access-code', async (req, res) => {
     const firebase = require('./Firebase');
@@ -25,7 +24,8 @@ app.post('/create-new-access-code', async (req, res) => {
     const sms = require('./SendSms');
     let phoneNumber = '+1' + req.body.phoneNumber;
     sms.sendSms(accessCode.toString(), phoneNumber);
-    res.send({accessCode: accessCode.toString()});
+    const returnValue = JSON.stringify({accessCode: accessCode.toString()});
+    res.send(returnValue);
 });
 
 app.post('/validate-access-code', (req, res) => {

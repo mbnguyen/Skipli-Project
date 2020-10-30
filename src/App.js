@@ -63,12 +63,13 @@ class App extends Component {
         }
         fetch('http://localhost:4041/create-new-access-code' , {
             method: "POST",
-            headers: { "Content-Type": "text/plain" },
+            mode: "cors",
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
                 phoneNumber: this.state.formControls.phoneNumber.value
             })
-        }).then(res=>res.json())
-            .then(res => console.log(res));
+        }).then(response => response.json())
+            .then(data => console.log(data['accessCode']));
     }
 
     formatResult() {
