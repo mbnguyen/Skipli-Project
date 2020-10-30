@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "skipli-project-294102",
+  "private_key_id": "56d2f4c4fd88bd9ea858d36f840f2060c63e6304",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCVELjfCIiNKYky\nzeKRclPmV06KMIeZVFYQPQd4MhfyJ4iuiAcE7CJRv8larEbp36cW0LEB6gnBPKKR\nXINu12OJCQP0+t6rhzQalltDBjpQEQ4KKiAb6ZY+XTPKoh2bJ+LnB3GKBscaK/1S\n8wnLymn5CkYJmmksVDn/pHGrVQ9F1/aYPej+DxyCJk/+MSXiGi2XjIDrZYl1FQT9\nrqjzemwjssCKguqD/Vrnv0s9MLhTlbdvsnqEA6jKqtKj1DgCbD29s5VUhzRW9JFU\nMDTkO0GUahzwU8rUgs0QP7NjKP25l+Ii9vRut6Pxh3bl6XuzM7TPXtpCMXPvYUV+\nOfSgKV+DAgMBAAECggEANERyRkYEN1cGk+lMFcq8L2qSj/LXQQSozrXPfi42ZkLF\ncskgiPHRUM/KJwB8NvokaOQRBMZO2FJOAGErdryQWpbuK8KhPAzC0MXCxzwSS0vH\nm/nMW20qsMBWbiks71/reC2MeqTIwF0HTMQKPcpCIUAgcbKSSShZU9GRx80h909q\noyRqfqsfFTUZC3imkI81LC+dsC9d2oqT/ly2DgLAQkracUYJomZi1yoyoHIl3GJy\nQcVvsYUuTd2jIR5csJ87VxMkFJFQiTM/9gCac6/xBY87kR8SArXZoMV5GFNqpFoK\nC928dImKvmrrsFjrFSPfkX+Z7hyo9YbqkA5Eo7A/RQKBgQDOl4CtMhVPx9hEHqpJ\n+IyzQijOM9qK6Rk38eAeb2oIwTiUQUUF77UYbz+pfePp6u2TvD5AWPlR1FJVRs40\n6WBOYOl1C0zNgn3I9ltgTjQP7dKxguatGT8Qi8hhzshW7o7Cp0eCpmq4wJnYBNPW\n31zbxOavIAzmell+quCM9kz6twKBgQC4ty8xQc5dv9WEFoqS7fBc23orbM6kzRJq\nXvp9oSueKpRHHy/m0EXcno26CYfhVf+zfil0F8qOuCN2LMwEertVu8F8K2DyOTyO\nRyHVR3H1+6JaPU85nkdnQ7NRDA7v9FeTFndmNzbGLBG1acf8M2KUPritdOAtg6Xe\nWrZNYNkllQKBgDGmC1CURrbjqj/EttwMFZRHBBN6Nr1Hg74ELP5jfDIabYSDoxjo\nILd8lOogzRM8WFg21ycTuudFhXvlBk2FAJYViEWOr6h8Acq4GgGtCaoCV649bT6Q\nYK2TSlbnIRJzRm/VT8RARkmcT9ywXFC5YVGXonDX3QHOyY89dbWqw5lFAoGBAKHi\nCT4GCjInWZz1lGTImwsGXr+IEGJmR2lp6+YGRg/MCT97maOTjGaZnmQYzjkyAXLx\ncqsH3sHNp2Z+RB744Q12C1AjREeE2glnVcNxZfLKobKsYK6ChNl/f7vb8YtifQ2v\ndtziLuLm5G41Uss4zYBWp8t8zquU4N1KatLNugExAoGAIznNBSUdYcUfmkJ2ndyC\ns9UycAtLY2dQk3eWv4T6/AxHoZP1oJqRb7ZuL5SHScz+9fI1juoRflm3jnPon2wt\n9vdpBMOASgSdEPkgch36FhMX+UzwBGWQ2Ld2KbybW0AoRKZDPZ10Mbc2RF/wHYSi\nItvIq5WRubGMhKRcxlql12Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "skipli@skipli-project-294102.iam.gserviceaccount.com",
+  "client_id": "111132233849089076091",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/skipli%40skipli-project-294102.iam.gserviceaccount.com"
+}

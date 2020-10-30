@@ -55,20 +55,20 @@ class App extends Component {
         });
     }
 
-    formSubmitHandler = (e) => {
+    formSubmitHandler = (e) =>  {
         e.preventDefault();
         if (!this.state.formControls.phoneNumber.valid) {
             alert("Please enter a phone number");
             this.setState({result: message.NEED_PHONE});
         }
-        fetch('http://localhost:4041/send' , {
+        fetch('http://localhost:4041/create-new-access-code' , {
             method: "POST",
             headers: { "Content-Type": "text/plain" },
             body: JSON.stringify({
                 phoneNumber: this.state.formControls.phoneNumber.value
             })
-        }).then((result) => result.json())
-            .then((info) => { console.log(info); })
+        }).then(res=>res.json())
+            .then(res => console.log(res));
     }
 
     formatResult() {
