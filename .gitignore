@@ -22,3 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 twilio.env
+
+/src/server/twilio.js
+/src/server/skipli-project-56d2f4c4fd88.json

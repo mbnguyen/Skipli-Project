@@ -15,18 +15,12 @@ const validate = (value, rules) => {
 }
 
 
-/**
- * minLength Val
- * @param  value
- * @param  minLength
- * @return
- */
-const phoneNumberValidator = (value, formValid) => {
-    var re = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+const phoneNumberValidator = (value) => {
+    var re = /^\d{10}$/;
     return re.test(String(value).toLowerCase());
 }
 
-const accessCodeValidator = (value, formValid) => {
+const accessCodeValidator = (value) => {
     var re = /^\d{6}$/;
     return re.test(String(value).toLowerCase());
 }

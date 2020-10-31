@@ -12,7 +12,6 @@ class App extends Component {
         super();
 
         this.state = {
-            result: "",
             formControls : {
                 phoneNumber: {
                     value: "",
@@ -60,24 +59,41 @@ class App extends Component {
         if (!this.state.formControls.phoneNumber.valid) {
             alert("Please enter a phone number");
             this.setState({result: message.NEED_PHONE});
+        } else if (!this.state.formControls.accessCode.valid) {
+            fetch('http://localhost:4041/create-new-access-code' , {
+                method: "POST",
+                mode: "cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    phoneNumber: this.state.formControls.phoneNumber.value
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    if (data['accessCode'] != 0) {
+                        alert("The access code was sent to your phone!");
+                    } else {
+                        alert("Cannot send the access code, please try again");
+                    }
+                });
+        } else {
+            fetch('http://localhost:4041/validate-access-code' , {
+                method: "POST",
+                mode: "cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    phoneNumber: this.state.formControls.phoneNumber.value,
+                    accessCode: this.state.formControls.accessCode.value
+                })
+            }).then(response => response.json())
+                .then(data => {
+                    if (data['success'] == true) {
+                        alert("Your phone number was successfully verified!");
+                    } else {
+                        alert("The access code you entered doesn't match our record!");
+                    }
+                });
         }
-        fetch('http://localhost:4041/create-new-access-code' , {
-            method: "POST",
-            mode: "cors",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-                phoneNumber: this.state.formControls.phoneNumber.value
-            })
-        }).then(response => response.json())
-            .then(data => console.log(data['accessCode']));
-    }
 
-    formatResult() {
-        let value = "";
-        switch (this.state.result) {
-            case message.NEED_PHONE: value = "Please enter the phone number"; break;
-        }
-        return value;
     }
 
     render() {
@@ -88,8 +104,8 @@ class App extends Component {
                     <div>
                         <span>Phone Number: </span>
                         <input type="phoneNumber" name="phoneNumber" value={this.state.formControls.phoneNumber.value}/>
-                        <button onSubmit={this.formSubmitHandler} disabled={!this.state.formControls.phoneNumber.valid}>Submit</button>
-                        <span hidden={this.state.formControls.phoneNumber.valid}>The phone number needs to have 10 digits. Ex: 123-456-7890</span>
+                        <button onSubmit={this.formSubmitHandler} disabled={!this.state.formControls.phoneNumber.valid || (this.state.formControls.phoneNumber.valid && this.state.formControls.accessCode.valid)}>Submit</button>
+                        <span hidden={this.state.formControls.phoneNumber.valid}>The phone number needs to have 10 digits. Ex: 1234567890</span>
                     </div>
                     <div>
                         <span>Access Code: </span>
@@ -98,8 +114,6 @@ class App extends Component {
                         <span hidden={this.state.formControls.accessCode.valid}>The access code needs to have 6 digits. Ex: 123456</span>
                     </div>
                 </form>
-
-                <h4>{this.formatResult()}</h4>
 
             </div>
         );

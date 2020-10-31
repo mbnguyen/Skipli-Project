@@ -21,21 +21,29 @@ app.post('/create-new-access-code', async (req, res) => {
         accessCode = accessCode * 10 + Math.floor(Math.random() * Math.floor(9));
     }
     const result = await firebase.writeUserData(admin, req.body.phoneNumber, accessCode)
-    const sms = require('./SendSms');
-    let phoneNumber = '+1' + req.body.phoneNumber;
-    sms.sendSms(accessCode.toString(), phoneNumber);
-    const returnValue = JSON.stringify({accessCode: accessCode.toString()});
+    if (result != null) {
+        const sms = require('./SendSms');
+        let phoneNumber = '+1' + req.body.phoneNumber;
+        sms.sendSms(accessCode.toString(), phoneNumber);
+        const returnValue = JSON.stringify({accessCode: accessCode.toString()});
+        res.send(returnValue);
+    } else {
+        const returnValue = JSON.stringify({accessCode: 0});
+        res.send(returnValue);
+    }
+});
+
+app.post('/validate-access-code', async (req, res) => {
+    const firebase = require('./Firebase');
+    const result = await firebase.readUserData(admin, req.body.phoneNumber, req.body.accessCode);
+    let returnValue;
+    if (result) {
+        returnValue = JSON.stringify({success: true});
+    } else {
+        returnValue = JSON.stringify({success: false});
+    }
+
     res.send(returnValue);
-});
-
-app.post('/validate-access-code', (req, res) => {
-    res.send('Running /validate-access-code');
-});
-
-app.post('/send', (req, res) => {
-    const sms = require('./SendSms');
-    console.log(req.body.phoneNumber);
-    //res.send(sms.sendSms('123', '+16178492720'));
 });
 
 app.listen(port, () => {

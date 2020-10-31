@@ -31,3 +31,19 @@ async function writeUserData(admin, phoneNumber, accessCode) {
     return returnValue;
 }
 exports.writeUserData = writeUserData;
+
+async function readUserData(admin, phoneNumber, accessCode) {
+    const db = admin.firestore();
+    const docRef = db.collection('users').doc(phoneNumber);
+    const doc = await docRef.get();
+    if (!doc.exists) {
+        return false;
+    } else {
+        if (doc.data()['accessCode'] == accessCode) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+exports.readUserData = readUserData;
