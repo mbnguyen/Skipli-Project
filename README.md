@@ -12,42 +12,41 @@ Programmer: Minh Nguyen
 
 1. Navigate to the project folder after downloaded.
 
-2. Install create react app.
-  Please read the README_CREATE_REACT_APP.md
+2. Install create react app. Please read the README_CREATE_REACT_APP.md
   
 3. Install express for the back end.
   
-  npm install express --save
+        npm install express --save
   
-  npm install cors
+        npm install cors
   
 4. Install nodemon to run the back end.
   
-  npm install -g nodemon
+        npm install -g nodemon
   
 5. Install twilio to send sms.
   
-  npm install twilio
+        npm install twilio
   
 6. Install Firebase FireStore for database.
   
-  npm install --save firebase
+        npm install --save firebase
   
-  npm install firebase-admin --save
+        npm install firebase-admin --save
   
 7. Navigate to the sever folder.
   
-  cd src/sever
+        cd src/sever
   
 8. Copy the credential files for FireStore and Twilio into the sever folder (not available on public).
 
 9. Export the Google credential file using command:
   
-  export GOOGLE_APPLICATION_CREDENTIALS="[Directory to the project]/src/server/[name of the credential json file]"
+        export GOOGLE_APPLICATION_CREDENTIALS="[Directory to the project]/src/server/[name of the credential json file]"
 
 10. Run the BackEnd.js using nodemon.
   
-  nodemon BackEnd.js
+        nodemon BackEnd.js
   
 11. Run the project, and follow the instruction on screen.
 
