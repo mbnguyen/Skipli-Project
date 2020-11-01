@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+# Skipli-Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Project: Skipli Project
+Description: This programs simulate the verifying phone number process.
+             Using React Node.js for front end.
+             Using Express for back end.
+             Using Firebase Firestore for database.
+             Using Twilio for texting.
+Programmer: Minh Nguyen
 
-## Available Scripts
+# How to run (MacOS)
 
-In the project directory, you can run:
+1. Navigate to the project folder after downloaded.
 
-### `npm start`
+2. Install create react app. Please read the README_CREATE_REACT_APP.md
+  
+3. Install express for the back end.
+  
+        npm install express --save
+  
+        npm install cors
+  
+4. Install nodemon to run the back end.
+  
+        npm install -g nodemon
+  
+5. Install twilio to send sms.
+  
+        npm install twilio
+  
+6. Install Firebase FireStore for database.
+  
+        npm install --save firebase
+  
+        npm install firebase-admin --save
+  
+7. Navigate to the sever folder.
+  
+        cd src/sever
+  
+8. Copy the credential files for FireStore into the sever folder (not available on public).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+9. Create a free account on Twilio for texting. Register the phone number TO send texts to. Then copy the accountSid, authToken, and the phone number to send text FROM.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+        const accountSid = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        const authToken = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        const sendFrom = '+1xxxxxxxxxx';
 
-### `npm test`
+10. Export the Google credential file using command:
+  
+        export GOOGLE_APPLICATION_CREDENTIALS="[Directory to the project]/src/server/[name of the credential json file]"
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+11. Run the BackEnd.js using nodemon.
+  
+        nodemon BackEnd.js
+  
+12. Run the project, and follow the instruction on screen.
 
-### `npm run build`
+Thank you.
+  
+  
+                
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  
+  
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
