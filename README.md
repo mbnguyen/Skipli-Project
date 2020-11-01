@@ -38,17 +38,23 @@ Programmer: Minh Nguyen
   
         cd src/sever
   
-8. Copy the credential files for FireStore and Twilio into the sever folder (not available on public).
+8. Copy the credential files for FireStore into the sever folder (not available on public).
 
-9. Export the Google credential file using command:
+9. Create a free account on Twilio for texting. Register the phone number TO send texts to. Then copy the accountSid, authToken, and the phone number to send text FROM.
+
+        const accountSid = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        const authToken = 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx';
+        const sendFrom = '+1xxxxxxxxxx';
+
+10. Export the Google credential file using command:
   
         export GOOGLE_APPLICATION_CREDENTIALS="[Directory to the project]/src/server/[name of the credential json file]"
 
-10. Run the BackEnd.js using nodemon.
+11. Run the BackEnd.js using nodemon.
   
         nodemon BackEnd.js
   
-11. Run the project, and follow the instruction on screen.
+12. Run the project, and follow the instruction on screen.
 
 Thank you.
   
