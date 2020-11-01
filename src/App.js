@@ -147,22 +147,27 @@ class App extends Component {
 
     render() {
         return (
-            <div className="form">
-
+            <div>
+                <h1>Skipli Project</h1>
+                <h3>by Minh Nguyen</h3>
                 <form onSubmit={this.formSubmitHandler} onChange={this.changeHandler}>
 
                     <div>
-                        <span>Phone Number: </span>
-                        <input type="phoneNumber" name="phoneNumber" value={this.state.formControls.phoneNumber.value}/>
-                        <button onSubmit={this.formSubmitHandler} disabled={!this.state.formControls.phoneNumber.valid || (this.state.formControls.phoneNumber.valid && this.state.formControls.accessCode.valid)}>Submit</button>
-                        <span hidden={this.state.formControls.phoneNumber.valid}>The phone number needs to have 10 digits. Ex: 1234567890</span>
+                        <p>
+                            <span>Phone Number: </span>
+                            <input type="phoneNumber" name="phoneNumber" value={this.state.formControls.phoneNumber.value}/>
+                            <button onSubmit={this.formSubmitHandler} disabled={!this.state.formControls.phoneNumber.valid || (this.state.formControls.phoneNumber.valid && this.state.formControls.accessCode.valid)}>Submit</button>
+                            <span hidden={this.state.formControls.phoneNumber.valid}> The phone number needs to have 10 digits. Ex: 1234567890</span>
+                        </p>
                     </div>
 
                     <div>
-                        <span>Access Code: </span>
-                        <input type="accessCode" name="accessCode" value={this.state.formControls.accessCode.value}/>
-                        <button onSubmit={this.formSubmitHandler} disabled={!this.state.formControls.accessCode.valid}>Verify Access Code</button>
-                        <span hidden={this.state.formControls.accessCode.valid}>The access code needs to have 6 digits. Ex: 123456</span>
+                        <p>
+                            <span>Access Code: </span>
+                            <input type="accessCode" name="accessCode" value={this.state.formControls.accessCode.value}/>
+                            <button onSubmit={this.formSubmitHandler} disabled={!this.state.formControls.accessCode.valid}>Verify Access Code</button>
+                            <span hidden={this.state.formControls.accessCode.valid}> The access code needs to have 6 digits. Ex: 123456</span>
+                        </p>
                     </div>
 
                 </form>
