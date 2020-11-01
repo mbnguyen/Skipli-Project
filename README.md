@@ -38,7 +38,9 @@ Programmer: Minh Nguyen
   
         cd src/sever
   
-8. Copy the credential files for FireStore into the sever folder (not available on public).
+8. Create a Google Service account and copy the credential files for FireStore into the sever folder.
+
+        https://cloud.google.com/iam/docs/creating-managing-service-accounts
 
 9. Create a free account on Twilio for texting. Register the phone number TO send texts to. Then copy the accountSid, authToken, and the phone number to send text FROM.
 
